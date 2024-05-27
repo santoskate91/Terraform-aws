@@ -9,6 +9,7 @@ variable "access_key" {
 variable "secret_key" {
   description = "from root"
 }
+
 variable "aws_iam_instance_profile_session_manager_id" {
   description = "from root"
 }

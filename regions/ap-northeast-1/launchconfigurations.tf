@@ -1,6 +1,6 @@
 # terraform/regions/ap-northeast-1/launchconfigurations.tf
 
-resource "aws_instance" "bastion2" {
+resource "aws_instance" "bastion2_tokyo" {
   ami                         = lookup(var.amis, var.region2)
   instance_type               = var.instance_type
   key_name                    = module.keypair.generated_key_tokyo_keyname
@@ -18,7 +18,7 @@ resource "aws_instance" "bastion2" {
   EOL
 
   tags = {
-    Name = "Bastion_2_public"
+    Name = "Bastion_2_tokyo_public"
   }
   lifecycle {
     create_before_destroy = true

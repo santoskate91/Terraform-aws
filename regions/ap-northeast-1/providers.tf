@@ -9,7 +9,7 @@ terraform {
 }
 
 provider "aws" {
-  alias  = "apnortheast1"
+  # alias  = "apnortheast1"
   region = var.region2
 
   access_key = var.access_key

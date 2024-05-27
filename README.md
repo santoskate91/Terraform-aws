@@ -1,4 +1,5 @@
-"# terraform-aws" 
+# Terraform-aws
 
-# first 
-"terraform init"
+#### After clone use
+
+> terraform init

@@ -3,7 +3,7 @@
 resource "aws_instance" "bastion2" {
   ami                         = lookup(var.amis, var.region2)
   instance_type               = var.instance_type
-  key_name                    = module.keypair.generated_key_keyname
+  key_name                    = module.keypair.generated_key_tokyo_keyname
   iam_instance_profile        = var.aws_iam_instance_profile_session_manager_id
   associate_public_ip_address = true
   security_groups             = [aws_security_group.ec2_security_group_tokyo.id]
@@ -29,7 +29,7 @@ resource "aws_instance" "bastion2" {
 resource "aws_instance" "webserver2" {
   ami                         = lookup(var.amis, var.region2)
   instance_type               = var.instance_type
-  key_name                    = module.keypair.generated_key_keyname
+  key_name                    = module.keypair.generated_key_tokyo_keyname
   iam_instance_profile        = var.aws_iam_instance_profile_session_manager_id
   associate_public_ip_address = true
   security_groups             = [aws_security_group.ec2_security_group_tokyo.id]

@@ -2,7 +2,7 @@
 
 # For vpc 2
 resource "aws_vpc" "vpc_tokyo" {
-  cidr_block           = var.vpc_cidr
+  cidr_block           = var.vpc_cidr_tokyo
   instance_tenancy     = "default"
   enable_dns_support   = "true"
   enable_dns_hostnames = "true"
@@ -14,8 +14,8 @@ resource "aws_vpc" "vpc_tokyo" {
 # public subnet
 resource "aws_subnet" "public_subnet_1_vpc_tokyo" {
   vpc_id                  = aws_vpc.vpc_tokyo.id
-  cidr_block              = var.public_subnet_1_cidr
-  availability_zone       = var.availability_zones[0]
+  cidr_block              = var.public_subnet_1_cidr_tokyo
+  availability_zone       = var.availability_zones_tokyo[0]
   map_public_ip_on_launch = "true"
 
   tags = {
@@ -24,8 +24,8 @@ resource "aws_subnet" "public_subnet_1_vpc_tokyo" {
 }
 resource "aws_subnet" "private_subnet_1_vcp_2" {
   vpc_id                  = aws_vpc.vpc_tokyo.id
-  cidr_block              = var.private_subnet_1_cidr
-  availability_zone       = var.availability_zones[0]
+  cidr_block              = var.private_subnet_1_cidr_tokyo
+  availability_zone       = var.availability_zones_tokyo[0]
   map_public_ip_on_launch = "true"
 
   tags = {

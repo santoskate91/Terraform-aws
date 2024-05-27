@@ -23,7 +23,7 @@ resource "aws_instance" "bastion2" {
   lifecycle {
     create_before_destroy = true
   }
-  depends_on = [module.keypair.generated_key_keyname]
+  depends_on = [module.keypair.generated_key_tokyo_keyname]
 }
 
 resource "aws_instance" "webserver2" {
@@ -49,5 +49,5 @@ resource "aws_instance" "webserver2" {
   lifecycle {
     create_before_destroy = true
   }
-  depends_on = [module.keypair.generated_key_keyname]
+  depends_on = [module.keypair.generated_key_tokyo_keyname]
 }

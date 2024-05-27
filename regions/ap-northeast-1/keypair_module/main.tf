@@ -6,7 +6,7 @@ resource "tls_private_key" "ec2key_tokyo" {
   rsa_bits  = 4096
 }
 resource "aws_key_pair" "generated_key_tokyo" {
-  key_name   = "ec2key"
+  key_name   = "ec2key_tokyo"
   public_key = tls_private_key.ec2key_tokyo.public_key_openssh
   depends_on = [
     tls_private_key.ec2key_tokyo

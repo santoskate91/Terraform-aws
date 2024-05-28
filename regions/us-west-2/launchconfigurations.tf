@@ -165,7 +165,7 @@ resource "aws_instance" "bastion2" {
   EOL
 
   tags = {
-    Name = "Bastion_2_public"
+    Name = "Bastion_2_public_vpc_2"
   }
   lifecycle {
     create_before_destroy = true

@@ -24,9 +24,9 @@ variable "aws_launch_configuration_ec2_name" {
 #   description = "var from main module"
 # }
 
-variable "private_subnet_1_vp_1_id" {
+variable "private_subnet_1_vpc_1_id" {
   description = "var from main module"
 }
-variable "private_subnet_2_vp_1_id" {
+variable "private_subnet_2_vpc_1_id" {
   description = "var from main module"
 }

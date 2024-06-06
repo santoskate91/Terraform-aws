@@ -14,11 +14,11 @@ output "public_subnet_2_vpc_1_id" {
   value       = aws_subnet.public_subnet_2_vpc_1.id
 }
 
-output "private_subnet_1_vp_1_id" {
+output "private_subnet_1_vpc_1_id" {
   description = "public subnet for instance"
   value       = aws_subnet.private_subnet_1_vpc_1.id
 }
-output "private_subnet_2_vp_1_id" {
+output "private_subnet_2_vpc_1_id" {
   description = "public subnet for instance"
   value       = aws_subnet.private_subnet_2_vpc_1.id
 }

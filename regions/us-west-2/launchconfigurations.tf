@@ -105,7 +105,7 @@ resource "aws_instance" "bastion" {
 #   iam_instance_profile        = aws_iam_instance_profile.session_manager.id
 #   associate_public_ip_address = true
 #   security_groups             = [aws_security_group.ec2_security_group.id]
-#   subnet_id                   = count.index % 2 == 0 ? module.vpc.private_subnet_1_vp_1_id : module.vpc.private_subnet_2_vp_1_id
+#   subnet_id                   = count.index % 2 == 0 ? module.vpc.private_subnet_1_vpc_1_id : module.vpc.private_subnet_2_vp_1_id
 #   user_data                   = <<-EOL
 #     #!/bin/bash  
 #       sudo yum update -y

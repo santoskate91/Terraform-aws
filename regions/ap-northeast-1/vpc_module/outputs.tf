@@ -13,3 +13,11 @@ output "private_subnet_1_vpc_tokyo" {
   description = "for instance"
   value       = aws_subnet.private_subnet_1_vcp_2.id
 }
+
+output "vpc_cidr_ap-northeast-1" {
+  value = aws_vpc.vpc_tokyo.cidr_block
+}
+
+output "route_private_subnet_vpc_tokyo_id" {
+  value = aws_route_table.route_private_subnet_vpc_tokyo.id
+}

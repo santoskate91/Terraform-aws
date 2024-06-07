@@ -28,3 +28,16 @@ variable "ec2_instance_name" {
   description = "Name of the EC2 instance"
   default     = "terraform-lab-ap-northeast-1"
 }
+
+variable "tgw_u-west-2_id" {
+
+}
+variable "vpc_cidr_us-west-2" {
+
+}
+# variable "peering_region_us-west-2" {
+
+# }
+variable "tgw_us-west-2_peering_attachment_id" {
+
+}

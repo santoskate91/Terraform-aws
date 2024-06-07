@@ -31,7 +31,7 @@ resource "aws_instance" "webserver2" {
   instance_type               = var.instance_type
   key_name                    = module.keypair.generated_key_tokyo_keyname
   iam_instance_profile        = var.aws_iam_instance_profile_session_manager_id
-  associate_public_ip_address = true
+  associate_public_ip_address = false
   security_groups             = [aws_security_group.ec2_security_group_tokyo.id]
   subnet_id                   = module.vpc.private_subnet_1_vpc_tokyo
   user_data                   = <<-EOL

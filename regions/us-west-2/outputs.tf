@@ -6,3 +6,13 @@
 # output "cf_dns" {
 #   value = module.cloudfront.aws_cloudfront_distribution_cf_alb_domain_name
 # }
+
+output "tgw_u-west-2_id" {
+  value = aws_ec2_transit_gateway.tgw_us-west-2.id
+}
+output "vpc_cidr_us-west-2_cidr_blocks" {
+  value = module.vpc.vpc_cidr_us-west-2
+}
+output "tgw_us-west-2_peering_attachment_id" {
+  value = aws_ec2_transit_gateway_peering_attachment.tgw_us-west-2_peering_attachment.id
+}

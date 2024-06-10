@@ -1,4 +1,4 @@
-# terraform/regions/us-west-2/autoscailing_module/variables.tf
+# terraform/regions/ap-northeast-2/autoscailing_module/variables.tf
 
 # auto scaling
 variable "autoscale_min" {
@@ -24,9 +24,9 @@ variable "aws_launch_configuration_ec2_name" {
 #   description = "var from main module"
 # }
 
-variable "private_subnet_1_vpc_1_id" {
+variable "private_subnet_1_vpc_tokyo_id" {
   description = "var from main module"
 }
-variable "private_subnet_2_vpc_1_id" {
+variable "private_subnet_2_vpc_tokyo_id" {
   description = "var from main module"
 }

@@ -1,4 +1,4 @@
-# terraform/regions/us-west-2/vpc_module/variables.tf
+# terraform/regions/ap-northeast-1/vpc_module/variables.tf
 
 # networking
 
@@ -12,10 +12,14 @@ variable "public_subnet_1_cidr_tokyo" {
 }
 variable "private_subnet_1_cidr_tokyo" {
   description = "CIDR Block for Private Subnet 1"
+  default     = "11.0.2.0/24"
+}
+variable "private_subnet_2_cidr_tokyo" {
+  description = "CIDR Block for Private Subnet 1"
   default     = "11.0.3.0/24"
 }
 variable "availability_zones_tokyo" {
   description = "Availability zones"
   type        = list(string)
-  default     = ["ap-northeast-1a", "ap-northeast-1c", "ap-northeast-1d"]
+  default     = ["ap-northeast-1a", "ap-northeast-1d", "ap-northeast-1c"]
 }

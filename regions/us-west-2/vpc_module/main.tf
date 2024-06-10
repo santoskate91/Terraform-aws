@@ -143,72 +143,72 @@ resource "aws_route_table_association" "private_route_2_association" {
   route_table_id = aws_route_table.route_private_subnet_vpc_1.id
 }
 
-# For vpc 2
-resource "aws_vpc" "vpc_2" {
-  cidr_block           = var.vpc_2_cidr
-  instance_tenancy     = "default"
-  enable_dns_support   = "true"
-  enable_dns_hostnames = "true"
+# # For vpc 2
+# resource "aws_vpc" "vpc_2" {
+#   cidr_block           = var.vpc_2_cidr
+#   instance_tenancy     = "default"
+#   enable_dns_support   = "true"
+#   enable_dns_hostnames = "true"
 
-  tags = {
-    Name = "vpc_2"
-  }
-}
-# public subnet
-resource "aws_subnet" "public_subnet_1_vpc_2" {
-  vpc_id                  = aws_vpc.vpc_2.id
-  cidr_block              = var.public_subnet_1_cidr_vpc_2
-  availability_zone       = var.availability_zones[0]
-  map_public_ip_on_launch = "true"
+#   tags = {
+#     Name = "vpc_2"
+#   }
+# }
+# # public subnet
+# resource "aws_subnet" "public_subnet_1_vpc_2" {
+#   vpc_id                  = aws_vpc.vpc_2.id
+#   cidr_block              = var.public_subnet_1_cidr_vpc_2
+#   availability_zone       = var.availability_zones[0]
+#   map_public_ip_on_launch = "true"
 
-  tags = {
-    Name = "public_subnet_1_vpc_2"
-  }
-}
-resource "aws_subnet" "private_subnet_1_vcp_2" {
-  vpc_id                  = aws_vpc.vpc_2.id
-  cidr_block              = var.private_subnet_1_cidr_vpc_2
-  availability_zone       = var.availability_zones[0]
-  map_public_ip_on_launch = "true"
+#   tags = {
+#     Name = "public_subnet_1_vpc_2"
+#   }
+# }
+# resource "aws_subnet" "private_subnet_1_vpc_2" {
+#   vpc_id                  = aws_vpc.vpc_2.id
+#   cidr_block              = var.private_subnet_1_cidr_vpc_2
+#   availability_zone       = var.availability_zones[0]
+#   map_public_ip_on_launch = "true"
 
-  tags = {
-    Name = "private_subnet_1_vpc_2"
-  }
-}
-# internet gateway
-resource "aws_internet_gateway" "igw_vpc_2" {
-  vpc_id = aws_vpc.vpc_2.id
+#   tags = {
+#     Name = "private_subnet_1_vpc_2"
+#   }
+# }
+# # internet gateway
+# resource "aws_internet_gateway" "igw_vpc_2" {
+#   vpc_id = aws_vpc.vpc_2.id
 
-  tags = {
-    Name = "igw_vpc_2"
-  }
-}
-# route
-resource "aws_route_table" "route_public_subnet_vpc_2" {
-  vpc_id = aws_vpc.vpc_2.id
+#   tags = {
+#     Name = "igw_vpc_2"
+#   }
+# }
+# # route
+# resource "aws_route_table" "route_public_subnet_vpc_2" {
+#   vpc_id = aws_vpc.vpc_2.id
 
-  tags = {
-    Name = "route_public_subnet_vpc_2"
-  }
+#   tags = {
+#     Name = "route_public_subnet_vpc_2"
+#   }
 
-  route {
-    cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.igw_vpc_2.id
-  }
-}
-resource "aws_route_table" "route_private_subnet_vpc_2" {
-  vpc_id = aws_vpc.vpc_2.id
+#   route {
+#     cidr_block = "0.0.0.0/0"
+#     gateway_id = aws_internet_gateway.igw_vpc_2.id
+#   }
+# }
+# resource "aws_route_table" "route_private_subnet_vpc_2" {
+#   vpc_id = aws_vpc.vpc_2.id
 
-  tags = {
-    Name = "route_private_subnet_vpc_2"
-  }
-}
-# associate route
-resource "aws_route_table_association" "public_route_1_association_vpc_2" {
-  subnet_id      = aws_subnet.public_subnet_1_vpc_2.id
-  route_table_id = aws_route_table.route_public_subnet_vpc_2.id
-}
-resource "aws_route_table_association" "private_route_1_association_vpc_2" {
-  subnet_id      = aws_subnet.private_subnet_1_vcp_2.id
-  route_table_id = aws_route_table.route_private_subnet_vpc_2.id
-}
+#   tags = {
+#     Name = "route_private_subnet_vpc_2"
+#   }
+# }
+# # associate route
+# resource "aws_route_table_association" "public_route_1_association_vpc_2" {
+#   subnet_id      = aws_subnet.public_subnet_1_vpc_2.id
+#   route_table_id = aws_route_table.route_public_subnet_vpc_2.id
+# }
+# resource "aws_route_table_association" "private_route_1_association_vpc_2" {
+#   subnet_id      = aws_subnet.private_subnet_1_vpc_2.id
+#   route_table_id = aws_route_table.route_private_subnet_vpc_2.id
+# }

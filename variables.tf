@@ -9,6 +9,10 @@ variable "region2" {
   description = "The AWS region to create resources in."
   default     = "ap-northeast-1"
 }
+variable "region3" {
+  description = "The AWS region to create resources in."
+  default     = "ap-northeast-2"
+}
 variable "aws_access_key" {
   description = "AWS access key"
   default     = "AKIASKEA5BPJ2PW5K6MI"

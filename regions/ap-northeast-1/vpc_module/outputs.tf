@@ -9,12 +9,15 @@ output "public_subnet_1_vpc_tokyo" {
   description = "for instance"
   value       = aws_subnet.public_subnet_1_vpc_tokyo.id
 }
-output "private_subnet_1_vpc_tokyo" {
+output "private_subnet_1_vpc_tokyo_id" {
   description = "for instance"
-  value       = aws_subnet.private_subnet_1_vcp_2.id
+  value       = aws_subnet.private_subnet_1_vpc_tokyo.id
+}
+output "private_subnet_2_vpc_tokyo_id" {
+  value = aws_subnet.private_subnet_2_vpc_tokyo.id
 }
 
-output "vpc_cidr_ap-northeast-1" {
+output "vpc_cidr_ap-northeast-1_cidr_blocks" {
   value = aws_vpc.vpc_tokyo.cidr_block
 }
 

@@ -42,26 +42,26 @@ resource "aws_subnet" "private_subnet_2_vpc_tokyo" {
   }
 }
 # internet gateway
-resource "aws_internet_gateway" "igw_vpc_tokyo" {
-  vpc_id = aws_vpc.vpc_tokyo.id
+# resource "aws_internet_gateway" "igw_vpc_tokyo" {
+#   vpc_id = aws_vpc.vpc_tokyo.id
 
-  tags = {
-    Name = "igw_vpc_tokyo"
-  }
-}
+#   tags = {
+#     Name = "igw_vpc_tokyo"
+#   }
+# }
 # route
-resource "aws_route_table" "route_public_subnet_vpc_tokyo" {
-  vpc_id = aws_vpc.vpc_tokyo.id
+# resource "aws_route_table" "route_public_subnet_vpc_tokyo" {
+#   vpc_id = aws_vpc.vpc_tokyo.id
 
-  tags = {
-    Name = "route_public_subnet_vpc_tokyo"
-  }
+#   tags = {
+#     Name = "route_public_subnet_vpc_tokyo"
+#   }
 
-  route {
-    cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.igw_vpc_tokyo.id
-  }
-}
+#   route {
+#     cidr_block = "0.0.0.0/0"
+#     gateway_id = aws_internet_gateway.igw_vpc_tokyo.id
+#   }
+# }
 resource "aws_route_table" "route_private_subnet_vpc_tokyo" {
   vpc_id = aws_vpc.vpc_tokyo.id
 

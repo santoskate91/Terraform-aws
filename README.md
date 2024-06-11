@@ -1,6 +1,7 @@
 # Terraform-aws
 
-    Terraform is IaC to build Infrastructure as Code this project build Demo AWS Landing Zone with terraform by 3 region.
+    Terraform is IaC to build Infrastructure as Code.
+    This project build Demo AWS Landing Zone with terraform by 3 region.
 
 ### Install setup Before Start
 

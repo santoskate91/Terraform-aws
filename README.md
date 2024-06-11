@@ -16,20 +16,20 @@ Terraform is IaC to build Infrastructure as Code. This project build Demo AWS La
 
 - Init terraform project
 
-  ```hcl
+  ```bash
   terraform init
   ```
 
 - 3 Step for Build and Clean Up
 
-  ```hcl
+  ```bash
   terraform plan
   ```
 
-  ```hcl
+  ```bash
   terraform appply
   ```
 
-  ```hcl
+  ```bash
   terraform destroy
   ```

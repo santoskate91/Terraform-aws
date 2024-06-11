@@ -6,11 +6,11 @@ Terraform is IaC to build Infrastructure as Code. This project build Demo AWS La
 
 - Install Terraform
 
-[Terraform](https://www.terraform.io/) for run command. Create Infrastructure.
+  [Terraform](https://www.terraform.io/) for run command. Create Infrastructure.
 
 - Install AWS CLI & Config credentials
 
-[AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) for run command. To remote build aws resource.
+  [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) for run command. To remote build aws resource.
 
 # After clone repo
 

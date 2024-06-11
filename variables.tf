@@ -15,11 +15,11 @@ variable "region3" {
 }
 variable "aws_access_key" {
   description = "AWS access key"
-  default     = "AKIASKEA5BPJ2PW5K6MI"
+  default     = ""
 }
 variable "aws_secret_key" {
   description = "AWS secret key"
-  default     = "4/JvZ/WDGDzVMyiRPoWoKyn+O9K0f1tiP5YAROMI"
+  default     = ""
 }
 
 # variable "ec2_instance_name" {

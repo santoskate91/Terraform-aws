@@ -12,7 +12,9 @@ resource "aws_ec2_transit_gateway" "tgw_us-west-2" {
 resource "aws_ec2_transit_gateway_vpc_attachment" "tgw_us-west-2_vpc-attachment" {
   transit_gateway_id = aws_ec2_transit_gateway.tgw_us-west-2.id
   vpc_id             = module.vpc.vpc_1_id
-  subnet_ids         = [module.vpc.private_subnet_1_vpc_1_id, module.vpc.private_subnet_2_vpc_1_id]
+  subnet_ids = [module.vpc.private_subnet_1_vpc_1_id
+    # , module.vpc.private_subnet_2_vpc_1_id
+  ]
   tags = {
     Name = "transit_vpc_attachment"
   }

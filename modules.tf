@@ -18,6 +18,9 @@ module "us-west-2" {
   tgw_ap-northeast-2_peering_attachment = module.ap_northeast-2.tgw_ap-northeast-2_peering_attachment
 
   trail_logs = module.ap_northeast-2.trail_logs
+
+  # load_balancer_private        = module.ap-northeast-1.load_balancer_private
+  aws_instance_bastion_list_id = module.ap-northeast-1.aws_instance_bastion_list_id
 }
 module "ap-northeast-1" {
   source                                      = "./regions/ap-northeast-1"
@@ -29,7 +32,8 @@ module "ap-northeast-1" {
   vpc_cidr_us-west-2      = module.us-west-2.vpc_cidr_us-west-2_cidr_blocks
   vpc_cidr_ap-northeast-2 = module.ap_northeast-2.vpc_cidr_ap-northeast-2_cidr_blocks
 
-  tgw_us-west-2_peering_attachment_id_1 = module.us-west-2.tgw_us-west-2_peering_attachment_id_1
+  tgw_us-west-2_peering_attachment_id_1              = module.us-west-2.tgw_us-west-2_peering_attachment_id_1
+  aws_security_group_load_balancer_security_group_id = module.us-west-2.aws_security_group_load_balancer_security_group_id
 }
 module "ap_northeast-2" {
   source                                      = "./regions/ap-northeast-2"

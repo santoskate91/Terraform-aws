@@ -1,38 +1,38 @@
 # terraform/regions/us-west-2/securitygroups.tf
 
-# # ALB Security Group (Traffic Internet -> ALB)
-# resource "aws_security_group" "load_balancer_security_group" {
-#   name        = "load_balancer_security_group"
-#   description = "Controls access to the ALB"
-#   vpc_id      = module.vpc.vpc_1_id
+# ALB Security Group (Traffic Internet -> ALB)
+resource "aws_security_group" "load_balancer_security_group" {
+  name        = "load_balancer_security_group"
+  description = "Controls access to the ALB"
+  vpc_id      = module.vpc.vpc_1_id
 
-#   ingress {
-#     description = "Allow http request from anywhere"
-#     from_port   = 80
-#     to_port     = 80
-#     protocol    = "tcp"
-#     cidr_blocks = ["0.0.0.0/0"]
+  ingress {
+    description = "Allow http request from anywhere"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
 
-#   }
-#   ingress {
-#     description = "Allow https request from anywhere"
-#     from_port   = 443
-#     to_port     = 443
-#     protocol    = "tcp"
-#     cidr_blocks = ["0.0.0.0/0"]
-#   }
+  }
+  ingress {
+    description = "Allow https request from anywhere"
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 
-#   egress {
-#     from_port   = 0
-#     to_port     = 0
-#     protocol    = "-1"
-#     cidr_blocks = ["0.0.0.0/0"]
-#   }
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 
-#   tags = {
-#     Name = "load_balancer_security_group"
-#   }
-# }
+  tags = {
+    Name = "load_balancer_security_group"
+  }
+}
 
 # Instance Security grop (Traffic ALB -> EC2, ssh -> EC2)
 resource "aws_security_group" "ec2_security_group" {

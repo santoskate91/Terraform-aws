@@ -39,3 +39,7 @@ variable "tgw_us-west-2_peering_attachment_id_1" {
 variable "vpc_cidr_ap-northeast-2" {
 
 }
+
+variable "aws_security_group_load_balancer_security_group_id" {
+
+}

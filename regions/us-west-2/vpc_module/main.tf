@@ -113,12 +113,12 @@ resource "aws_route_table" "route_private_subnet_vpc_1" {
   # }
 }
 
-# # route public subnet through theinternet gateway แทน route in aws_route_table ได้
-# resource "aws_route" "internet_igw_route" {
-#   route_table_id         = aws_route_table.route_public_subnet_vpc_1.id
-#   gateway_id             = aws_internet_gateway.igw_vpc_1.id
-#   destination_cidr_block = "0.0.0.0/0"
-# }
+# route public subnet through theinternet gateway แทน route in aws_route_table ได้
+resource "aws_route" "internet_igw_route" {
+  route_table_id         = aws_route_table.route_public_subnet_vpc_1.id
+  gateway_id             = aws_internet_gateway.igw_vpc_1.id
+  destination_cidr_block = "0.0.0.0/0"
+}
 # resource "aws_route" "nat_gateway_route" {
 #   route_table_id         = aws_route_table.route_private_subnet_vpc_1.id
 #   nat_gateway_id         = aws_nat_gateway.natgw_vpc_1.id

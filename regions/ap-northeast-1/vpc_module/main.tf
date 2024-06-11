@@ -11,16 +11,16 @@ resource "aws_vpc" "vpc_tokyo" {
   }
 }
 # public subnet
-resource "aws_subnet" "public_subnet_1_vpc_tokyo" {
-  vpc_id                  = aws_vpc.vpc_tokyo.id
-  cidr_block              = var.public_subnet_1_cidr_tokyo
-  availability_zone       = var.availability_zones_tokyo[0]
-  map_public_ip_on_launch = "true"
+# resource "aws_subnet" "public_subnet_1_vpc_tokyo" {
+#   vpc_id                  = aws_vpc.vpc_tokyo.id
+#   cidr_block              = var.public_subnet_1_cidr_tokyo
+#   availability_zone       = var.availability_zones_tokyo[0]
+#   map_public_ip_on_launch = "true"
 
-  tags = {
-    Name = "public_subnet_1_vpc_tokyo"
-  }
-}
+#   tags = {
+#     Name = "public_subnet_1_vpc_tokyo"
+#   }
+# }
 resource "aws_subnet" "private_subnet_1_vpc_tokyo" {
   vpc_id                  = aws_vpc.vpc_tokyo.id
   cidr_block              = var.private_subnet_1_cidr_tokyo
@@ -70,10 +70,10 @@ resource "aws_route_table" "route_private_subnet_vpc_tokyo" {
   }
 }
 # associate route
-resource "aws_route_table_association" "public_route_1_association_vpc_tokyo" {
-  subnet_id      = aws_subnet.public_subnet_1_vpc_tokyo.id
-  route_table_id = aws_route_table.route_public_subnet_vpc_tokyo.id
-}
+# resource "aws_route_table_association" "public_route_1_association_vpc_tokyo" {
+#   subnet_id      = aws_subnet.public_subnet_1_vpc_tokyo.id
+#   route_table_id = aws_route_table.route_public_subnet_vpc_tokyo.id
+# }
 resource "aws_route_table_association" "private_route_1_association_vpc_tokyo" {
   subnet_id      = aws_subnet.private_subnet_1_vpc_tokyo.id
   route_table_id = aws_route_table.route_private_subnet_vpc_tokyo.id

@@ -39,6 +39,8 @@ output "private_subnet_2_vpc_1_id" {
 #   description = "for instance"
 #   value       = aws_subnet.private_subnet_1_vpc_2.id
 # }
+
+# transits
 output "vpc_cidr_us-west-2" {
   value = aws_vpc.vpc_1.cidr_block
 }

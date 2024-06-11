@@ -28,8 +28,8 @@
 #       }
 #     }
 #     min_ttl     = 0
-#     default_ttl = 60 # 3600
-#     max_ttl     = 60 # 86400
+#     default_ttl = 0 # 3600
+#     max_ttl     = 0 # 86400
 #   }
 
 #   restrictions {

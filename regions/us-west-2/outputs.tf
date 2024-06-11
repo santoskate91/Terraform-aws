@@ -20,9 +20,9 @@ output "tgw_us-west-2_peering_attachment_id_2" {
   value = aws_ec2_transit_gateway_peering_attachment.tgw_us-west-2_peering_attachment_2.id
 }
 
-# output "aws_cloudfront_distribution_cf_alb_domain_name" {
-#   value = module.cloudfront.aws_cloudfront_distribution_cf_alb_domain_name
-# }
+output "aws_cloudfront_distribution_cf_alb_domain_name" {
+  value = module.cloudfront.aws_cloudfront_distribution_cf_alb_domain_name
+}
 
 output "aws_lb_load_balancer_public_dns_name" {
   value = module.loadbalancer.aws_lb_load_balancer_public_dns_name

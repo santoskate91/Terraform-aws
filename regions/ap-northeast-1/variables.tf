@@ -43,3 +43,6 @@ variable "vpc_cidr_ap-northeast-2" {
 variable "aws_security_group_load_balancer_security_group_id" {
 
 }
+variable "trail_logs" {
+
+}

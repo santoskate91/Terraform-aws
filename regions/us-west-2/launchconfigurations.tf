@@ -131,29 +131,3 @@
 #   }
 #   depends_on = [module.keypair.generated_key_keyname]
 # }
-
-# resource "aws_cloudtrail" "us-west-2_cloudtrail" {
-#   name                          = "us-west-2_cloudtrail"
-#   s3_bucket_name                = var.trail_logs.bucket
-#   s3_key_prefix                 = "cloudtrail/"
-#   include_global_service_events = true
-#   is_multi_region_trail         = true
-#   enable_logging                = true
-
-#   event_selector {
-#     read_write_type           = "All"
-#     include_management_events = true
-#     data_resource {
-#       type   = "AWS::S3::Object"
-#       values = ["arn:aws:s3:::${var.trail_logs.bucket}/*"]
-#     }
-#   }
-
-#   tags = {
-#     Name = "us-west-2_cloudtrail"
-#   }
-
-#   depends_on = [
-#     var.trail_logs
-#   ]
-# }

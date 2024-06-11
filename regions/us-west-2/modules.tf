@@ -36,8 +36,8 @@ module "loadbalancer" {
 }
 
 # cloudfront
-# module "cloudfront" {
-#   source = "./cloudfront_module"
+module "cloudfront" {
+  source = "./cloudfront_module"
 
-#   loadbalancer_aws_lb_load_balancer_public_dns_name = module.loadbalancer.aws_lb_load_balancer_public_dns_name
-# }
+  loadbalancer_aws_lb_load_balancer_public_dns_name = module.loadbalancer.aws_lb_load_balancer_public_dns_name
+}

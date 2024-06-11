@@ -54,12 +54,6 @@ variable "tgw_ap-northeast-1_peering_attachment" {
 variable "tgw_ap-northeast-2_peering_attachment" {
 
 }
-#monitor S3
-variable "trail_logs" {
-
-}
-
-
 # variable "load_balancer_private" {
 
 # }

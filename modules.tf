@@ -18,7 +18,6 @@ module "us-west-2" {
   tgw_ap-northeast-2_peering_attachment = module.ap_northeast-2.tgw_ap-northeast-2_peering_attachment
 
   # trail_logs = module.ap_northeast-2.trail_logs
-
   # load_balancer_private        = module.ap-northeast-1.load_balancer_private
   aws_instance_bastion_list_id = module.ap-northeast-1.aws_instance_bastion_list_id
 }

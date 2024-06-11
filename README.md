@@ -1,17 +1,16 @@
 # Terraform-aws
 
-    Terraform is IaC to build Infrastructure as Code.
-    This project build Demo AWS Landing Zone with terraform by 3 region.
+### Terraform is IaC to build Infrastructure as Code. This project build Demo AWS Landing Zone with terraform by 3 region.
 
-### Install setup Before Start
+# Install setup Before Start
 
-# Install Terraform
+## Install Terraform
 
-[Terraform web](https://www.terraform.io/)
+[Terraform](https://www.terraform.io/) for run command. Create Infrastructure.
 
-# Install AWS CLI & Config credentials
+## Install AWS CLI & Config credentials
 
-[AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+[AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) for run command. To remote build aws resource.
 
 ### After clone repo
 

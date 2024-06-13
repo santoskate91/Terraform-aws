@@ -6,10 +6,10 @@ variable "vpc_cidr_tokyo" {
   description = "CIDR Block for VPC"
   default     = "11.0.0.0/16"
 }
-# variable "public_subnet_1_cidr_tokyo" {
-#   description = "CIDR Block for Public Subnet 1"
-#   default     = "11.0.1.0/24"
-# }
+variable "public_subnet_1_cidr_tokyo" {
+  description = "CIDR Block for Public Subnet 1"
+  default     = "11.0.1.0/24"
+}
 variable "private_subnet_1_cidr_tokyo" {
   description = "CIDR Block for Private Subnet 1"
   default     = "11.0.2.0/24"

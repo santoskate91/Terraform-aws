@@ -120,7 +120,12 @@ resource "aws_instance" "webserver2" {
     sudo yum install -y httpd
     sudo systemctl start httpd
     sudo systemctl enable httpd
-    echo "<h1>Hello World from $(hostname)</h1>" | sudo tee /var/www/html/index.html
+    
+    LOAD_BALANCER_PRIVATE_DNS="${var.load_balancer_private_dns_name}"
+    echo "ProxyPass / http://${var.load_balancer_private_dns_name}/" >> /etc/httpd/conf/httpd.conf
+    echo "ProxyPassReverse / http://${var.load_balancer_private_dns_name}/" >> /etc/httpd/conf/httpd.conf
+    systemctl restart httpd
+
   EOL
 
   tags = {

@@ -95,10 +95,10 @@ resource "aws_route_table" "route_public_subnet_vpc_1" {
     Name = "route_public_subnet_vpc_1"
   }
 
-  route {
-    cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.igw_vpc_1.id
-  }
+  # route {
+  #   cidr_block = "0.0.0.0/0"
+  #   gateway_id = aws_internet_gateway.igw_vpc_1.id
+  # }
 }
 resource "aws_route_table" "route_private_subnet_vpc_1" {
   vpc_id = aws_vpc.vpc_1.id
@@ -107,10 +107,10 @@ resource "aws_route_table" "route_private_subnet_vpc_1" {
     Name = "route_private_subnet_vpc_1"
   }
 
-  route {
-    cidr_block = "0.0.0.0/0"
-    gateway_id = aws_eip.eip_natgw.id
-  }
+  # route {
+    # cidr_block = "0.0.0.0/0"
+    # gateway_id = aws_nat_gateway.natgw_vpc_1.id
+  # }
 }
 
 # route public subnet through theinternet gateway แทน route in aws_route_table ได้

@@ -35,4 +35,6 @@ resource "aws_s3_bucket_policy" "cloudtrail_bucket_policy" {
       }
     ]
   })
+
+  depends_on = [aws_s3_bucket.trail_logs]
 }

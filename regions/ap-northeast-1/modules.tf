@@ -16,13 +16,13 @@ module "keypair" {
 #   private_subnet_1_vpc_tokyo_id = module.vpc.private_subnet_1_vpc_tokyo_id
 #   private_subnet_2_vpc_tokyo_id = module.vpc.private_subnet_2_vpc_tokyo_id
 # }
-# module "loadbalancer" {
-#   source = "./loadbalancer_module"
+module "loadbalancer" {
+  source = "./loadbalancer_module"
 
-#   aws_security_group_load_balancer_security_group_id = aws_security_group.load_balancer_security_group.id
-#   vpc_tokyo                                          = module.vpc.vpc_tokyo
-#   private_subnet_1_vpc_tokyo_id                      = module.vpc.private_subnet_1_vpc_tokyo_id
-#   private_subnet_2_vpc_tokyo_id                      = module.vpc.private_subnet_2_vpc_tokyo_id
-#   aws_instance_bastion_list_id                       = aws_instance.webserver[*].id
-#   aws_instance_webserver_list_id                     = aws_launch_configuration.ec2[*].id
-# }
+  aws_security_group_load_balancer_security_group_id = aws_security_group.load_balancer_security_group.id
+  vpc_tokyo                                          = module.vpc.vpc_tokyo
+  private_subnet_1_vpc_tokyo_id                      = module.vpc.private_subnet_1_vpc_tokyo_id
+  private_subnet_2_vpc_tokyo_id                      = module.vpc.private_subnet_2_vpc_tokyo_id
+  # aws_instance_bastion_list_id                       = aws_instance.webserver[*].id
+  aws_instance_webserver_list_id = aws_instance.webserver[*].id
+}

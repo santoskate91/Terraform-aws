@@ -13,7 +13,7 @@
 
 variable "health_check_path" {
   description = "Health check path for the default target group"
-  default     = "/"
+  default     = "/health"
 }
 
 # security group
@@ -36,5 +36,8 @@ variable "vpc_public_subnet_2_vpc_1_id" {
 
 # }
 variable "aws_instance_bastion_list_id" {
+
+}
+variable "aws_instance_webserver2_id" {
 
 }

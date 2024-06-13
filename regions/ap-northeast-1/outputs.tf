@@ -14,6 +14,6 @@ output "aws_instance_bastion_list_id" {
   value      = aws_instance.webserver[*].id
   depends_on = [aws_instance.webserver[0], aws_instance.webserver[1]]
 }
-# output "load_balancer_private" {
-#   value = module.loadbalancer.load_balancer_private
-# }
+output "load_balancer_private_dns_name" {
+  value = module.loadbalancer.load_balancer_private_dns_name
+}

@@ -23,3 +23,5 @@ variable "availability_zones_tokyo" {
   type        = list(string)
   default     = ["ap-northeast-1a", "ap-northeast-1d", "ap-northeast-1c"]
 }
+
+

@@ -66,25 +66,25 @@ resource "aws_internet_gateway" "igw_vpc_1" {
     Name = "igw_vpc_1"
   }
 }
-# # nat gateway
-# resource "aws_eip" "eip_natgw" {
-#   associate_with_private_ip = "10.0.0.5"
-#   depends_on                = [aws_internet_gateway.igw_vpc_1]
+# nat gateway
+resource "aws_eip" "eip_natgw" {
+  associate_with_private_ip = "10.0.0.5"
+  depends_on                = [aws_internet_gateway.igw_vpc_1]
 
-#   tags = {
-#     Name = "EIP_for_NAT"
-#   }
-# }
-# resource "aws_nat_gateway" "natgw_vpc_1" {
-#   allocation_id = aws_eip.eip_natgw.id
-#   # connectivity_type = "private"
-#   subnet_id  = aws_subnet.public_sebnet_1_vpc_1.id
-#   depends_on = [aws_eip.eip_natgw]
+  tags = {
+    Name = "EIP_for_NAT"
+  }
+}
+resource "aws_nat_gateway" "natgw_vpc_1" {
+  allocation_id = aws_eip.eip_natgw.id
+  # connectivity_type = "private"
+  subnet_id  = aws_subnet.public_sebnet_1_vpc_1.id
+  depends_on = [aws_eip.eip_natgw]
 
-#   tags = {
-#     Name = "natgw_vpc_1"
-#   }
-# }
+  tags = {
+    Name = "natgw_vpc_1"
+  }
+}
 
 # For route table
 # Create route
@@ -107,10 +107,10 @@ resource "aws_route_table" "route_private_subnet_vpc_1" {
     Name = "route_private_subnet_vpc_1"
   }
 
-  # route {
-  #   cidr_block = "0.0.0.0/0"
-  #   gateway_id = aws_nat_gateway.natgw_vpc_1.id
-  # }
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_eip.eip_natgw.id
+  }
 }
 
 # route public subnet through theinternet gateway แทน route in aws_route_table ได้
@@ -119,11 +119,11 @@ resource "aws_route" "internet_igw_route" {
   gateway_id             = aws_internet_gateway.igw_vpc_1.id
   destination_cidr_block = "0.0.0.0/0"
 }
-# resource "aws_route" "nat_gateway_route" {
-#   route_table_id         = aws_route_table.route_private_subnet_vpc_1.id
-#   nat_gateway_id         = aws_nat_gateway.natgw_vpc_1.id
-#   destination_cidr_block = "0.0.0.0/0"
-# }
+resource "aws_route" "nat_gateway_route" {
+  route_table_id         = aws_route_table.route_private_subnet_vpc_1.id
+  nat_gateway_id         = aws_nat_gateway.natgw_vpc_1.id
+  destination_cidr_block = "0.0.0.0/0"
+}
 
 # Associate route to subnet
 resource "aws_route_table_association" "public_route_1_association" {

@@ -21,9 +21,9 @@ resource "aws_alb_target_group" "default_target_group_public" {
     port                = "traffic-port"
     healthy_threshold   = 5
     unhealthy_threshold = 2
-    timeout             = 2
-    interval            = 60
-    matcher             = 200
+    timeout             = 5
+    interval            = 30
+    matcher             = "200-299"
   }
 }
 
@@ -47,6 +47,11 @@ resource "aws_alb_listener" "ec2_alb_http_listener_public" {
 #   target_id        = each.value
 #   port             = 80
 # }
+resource "aws_alb_target_group_attachment" "webserver_attachment_public" {
+  target_group_arn = aws_alb_target_group.default_target_group_public.arn
+  target_id        = var.aws_instance_webserver2_id
+  port             = 80
+}
 
 # resource "aws_alb_target_group_attachment" "webserver_attachment_public" {
 #   for_each         = { for idx, id in var.aws_instance_webserver_list_id : idx => id }

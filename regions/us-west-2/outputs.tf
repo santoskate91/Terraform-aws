@@ -31,3 +31,7 @@ output "aws_lb_load_balancer_public_dns_name" {
 output "aws_security_group_load_balancer_security_group_id" {
   value = aws_security_group.load_balancer_security_group.id
 }
+
+output "aws_instance_webserver2_private_ip" {
+  value = aws_instance.webserver2.private_ip
+}

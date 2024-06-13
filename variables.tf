@@ -15,13 +15,12 @@ variable "region3" {
 }
 variable "aws_access_key" {
   description = "AWS access key"
-  default     = ""
+  default     = "AKIASKEA5BPJ2PW5K6MI"
 }
 variable "aws_secret_key" {
   description = "AWS secret key"
-  default     = ""
+  default     = "4/JvZ/WDGDzVMyiRPoWoKyn+O9K0f1tiP5YAROMI"
 }
-
 # variable "ec2_instance_name" {
 #   description = "Name of the EC2 instance"
 #   default     = "terraform-lab"

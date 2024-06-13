@@ -33,6 +33,7 @@ module "loadbalancer" {
   # aws_instance_webserver_list_id                     = aws_instance.webserver[*].id
   aws_instance_bastion_list_id = var.aws_instance_bastion_list_id
   # load_balancer_private = var.load_balancer_private
+  aws_instance_webserver2_id = aws_instance.webserver2.id
 }
 
 # cloudfront

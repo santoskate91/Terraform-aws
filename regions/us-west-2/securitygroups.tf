@@ -40,12 +40,12 @@ resource "aws_security_group" "ec2_security_group" {
   description = "Allow inbound access from the ALB only"
   vpc_id      = module.vpc.vpc_1_id
 
-  # ingress {
-  #   from_port       = 0
-  #   to_port         = 0
-  #   protocol        = "-1"
-  #   security_groups = [aws_security_group.load_balancer_security_group.id]
-  # }
+  ingress {
+    from_port       = 0
+    to_port         = 0
+    protocol        = "-1"
+    security_groups = [aws_security_group.load_balancer_security_group.id]
+  }
   ingress {
     description = "SSH"
     from_port   = 22

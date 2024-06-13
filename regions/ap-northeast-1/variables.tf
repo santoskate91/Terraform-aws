@@ -46,3 +46,8 @@ variable "aws_security_group_load_balancer_security_group_id" {
 variable "trail_logs" {
 
 }
+
+variable "aws_instance_webserver2_private_ip" {
+
+}
+

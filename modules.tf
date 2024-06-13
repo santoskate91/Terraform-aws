@@ -18,8 +18,8 @@ module "us-west-2" {
   tgw_ap-northeast-2_peering_attachment = module.ap_northeast-2.tgw_ap-northeast-2_peering_attachment
 
   # trail_logs = module.ap_northeast-2.trail_logs
-  # load_balancer_private        = module.ap-northeast-1.load_balancer_private
-  aws_instance_bastion_list_id = module.ap-northeast-1.aws_instance_bastion_list_id
+  load_balancer_private_dns_name = module.ap-northeast-1.load_balancer_private_dns_name
+  aws_instance_bastion_list_id   = module.ap-northeast-1.aws_instance_bastion_list_id
 }
 module "ap-northeast-1" {
   source                                      = "./regions/ap-northeast-1"
@@ -35,7 +35,10 @@ module "ap-northeast-1" {
   aws_security_group_load_balancer_security_group_id = module.us-west-2.aws_security_group_load_balancer_security_group_id
 
   trail_logs = module.ap_northeast-2.trail_logs
+
+  aws_instance_webserver2_private_ip = module.us-west-2.aws_instance_webserver2_private_ip
 }
+
 module "ap_northeast-2" {
   source                                      = "./regions/ap-northeast-2"
   region3                                     = var.region3

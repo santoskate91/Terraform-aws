@@ -14,6 +14,8 @@ Terraform is IaC to build Infrastructure as Code. This project build Demo AWS La
 
 # After clone repo
 
+- Input your Credential in variables.tf file [aws_access_key, aws_secret_key]
+
 - Init terraform project
 
   ```bash
